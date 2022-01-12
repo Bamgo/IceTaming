@@ -8,9 +8,16 @@ public class PlayerController : MonoBehaviour
     private StageData stageData;
     private Movement2D movement2D;
 
+    private float lowSpeed;  // Shift키 입력 시 감소 속도
+    private float applylowSpeed; // Shift키 입력시 연산되는 감소 속도
+    private bool applyRunFlag = false;  // Shift 키 입력 여부
+
+    private Animator animator;
+
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -20,6 +27,9 @@ public class PlayerController : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
 
         movement2D.MoveTo(new Vector3(x, y, 0));
+
+        animator.SetFloat("DirX", x);
+        animator.SetFloat("DirY", y);
     }
 
     private void LateUpdate()
