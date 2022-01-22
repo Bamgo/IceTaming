@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
 
     private float lowSpeed;  // Shift키 입력 시 감소 속도
     private float applylowSpeed; // Shift키 입력시 연산되는 감소 속도
-    private bool applyRunFlag = false;  // Shift 키 입력 여부
 
     private Animator animator;
     private PlayerShooting weapon;
