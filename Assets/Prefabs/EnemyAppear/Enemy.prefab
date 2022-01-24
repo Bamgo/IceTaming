@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6789000972358723176}
   - component: {fileID: 6789000972358723174}
   - component: {fileID: -3894316638837751307}
-  - component: {fileID: -9205238234057667482}
   - component: {fileID: 5560486471174487526}
   - component: {fileID: 2651340193941464321}
   m_Layer: 0
@@ -124,18 +123,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &-9205238234057667482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6789000972358723179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52bb85d165b16f04f90d0c4cd0745a57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5560486471174487526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +149,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  scorePoint: 100

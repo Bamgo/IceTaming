@@ -8,6 +8,7 @@ public class PlayerShootCrash : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))  // 샷과 부딪힌 오브젝트의 태그가 "Enemy"이면
         {
+            collision.GetComponent<Enemy>().OnDie();  // 부딪힌 오브젝트 사망 처리
             Destroy(gameObject);  // 샷 삭제
         }
         else if (collision.CompareTag("UndyingEnemy"))  // 샷과 부딪힌 오브젝트의 태그가 "UndyingEnemy"이면

@@ -6,15 +6,23 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private StageData stageData;
-    private Movement2D movement2D;
     [SerializeField]
     private KeyCode keyCodeAttack = KeyCode.Z;  // 공격 키로 z키 설정
+
+    private Movement2D movement2D;
+    private PlayerShooting weapon;
+    private Animator animator;
 
     private float lowSpeed;  // Shift키 입력 시 감소 속도
     private float applylowSpeed; // Shift키 입력시 연산되는 감소 속도
 
-    private Animator animator;
-    private PlayerShooting weapon;
+    private int score;
+
+    public int Score
+    {
+        set => score = Mathf.Max(0, value);  // score 값이 음수가 되지 않도록
+        get => score;
+    }
 
     private void Awake()
     {
