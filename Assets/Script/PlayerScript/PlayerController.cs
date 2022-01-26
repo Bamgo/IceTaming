@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private string nextSceneName;
     [SerializeField]
     private StageData stageData;
     [SerializeField]
@@ -57,5 +60,11 @@ public class PlayerController : MonoBehaviour
         // 플레이어 캐릭터가 화면 밖으로 나가지 못하도록 함
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, stageData.LimitMin.x, stageData.LimitMax.x),
                                          Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y));
+    }
+
+    public void OnDie()  // 플레이어 사망 시 nextSceneName으로 이동
+    {
+        PlayerPrefs.SetInt("Score", score);  // 획득한 점수 score를 디바이스에 저장
+        SceneManager.LoadScene(nextSceneName);
     }
 }

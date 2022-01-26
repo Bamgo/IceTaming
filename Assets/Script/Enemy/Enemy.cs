@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         {
             collision.GetComponent<PlayerHP>().TakeDamage(damage);  // 공격력 만큼 체력 감소
 
-            OnDie();  // 해당 적 사망 (OnDie함수 호출)
+            Destroy(gameObject);  // 해당 적 사망
         }
     }
 
