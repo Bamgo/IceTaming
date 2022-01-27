@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private float lowSpeed;  // Shift키 입력 시 감소 속도
     private float applylowSpeed; // Shift키 입력시 연산되는 감소 속도
 
+    private bool isDie = false;  // 사망 여부
+
     private int score;
 
     public int Score
@@ -36,6 +38,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if(isDie == true)  // 플레이어가 사망 애니메이션 재생 중일 때에는 이동 및 공격이 불가능하게 설정
+        {
+            return;
+        }
+
         // 방향 키를 눌러 이동 방향 설정
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
@@ -61,8 +68,15 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, stageData.LimitMin.x, stageData.LimitMax.x),
                                          Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y));
     }
+    public void OnDie()
+    {
+        movement2D.MoveTo(Vector3.zero);  // 이동 방향 초기화
+        animator.SetTrigger("onDie");  // 사망 애니메이션 재생
+        Destroy(GetComponent<CircleCollider2D>());  // 적과 충돌하지 않도록 콜라이더 삭제
+        isDie = true;  // 사망 처리
+    }
 
-    public void OnDie()  // 플레이어 사망 시 nextSceneName으로 이동
+    public void OnDieEvent()  // 플레이어 사망 시 nextSceneName으로 이동
     {
         PlayerPrefs.SetInt("Score", score);  // 획득한 점수 score를 디바이스에 저장
         SceneManager.LoadScene(nextSceneName);
