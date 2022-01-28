@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     private int damage = 10;  // 적 공격력
     [SerializeField]
     private int scorePoint = 100;  // 적 처치 시 획득 점수
+    [SerializeField]
+    private GameObject explosionPrefab;
+
     private PlayerController playerController;  // 플레이어의 score 정보에 접근하기 위함
 
     private void Awake()
@@ -32,6 +35,7 @@ public class Enemy : MonoBehaviour
     public void OnDie()
     {
         playerController.Score += scorePoint;  // 플레이어의 점수를 scorePoint 만큼 증가
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);  // 적 오브젝트 삭제
     }
 }
