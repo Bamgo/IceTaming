@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3894316638837751307}
   - component: {fileID: 5560486471174487526}
   - component: {fileID: 2651340193941464321}
+  - component: {fileID: -6178035888345471060}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -98,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81e72ffa0371c94dbd0989a70327b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 12
-  moveLowSpeed: 12
+  moveSpeed: 8
+  moveLowSpeed: 8
   moveDirection: {x: 0, y: -1, z: 0}
 --- !u!68 &-3894316638837751307
 EdgeCollider2D:
@@ -151,3 +152,16 @@ MonoBehaviour:
   damage: 10
   scorePoint: 100
   explosionPrefab: {fileID: 4277364172245897323, guid: d902ddb385303e248a84d610feae16f4, type: 3}
+--- !u!114 &-6178035888345471060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789000972358723179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b42610f6345334d84e4cafd5ade881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 4
