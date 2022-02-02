@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private StageData stageData;
     [SerializeField]
     private KeyCode keyCodeAttack = KeyCode.Z;  // 공격 키로 z키 설정
+    [SerializeField]
+    private KeyCode keyCodeBomb = KeyCode.X;  // 공격 키로 x키 설정
 
     private Movement2D movement2D;
     private PlayerShooting weapon;
@@ -59,6 +61,11 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyUp(keyCodeAttack))
         {
             weapon.StopFiring();
+        }
+
+        if (Input.GetKeyDown(keyCodeBomb))  // 폭탄 키를 눌러 봄 사용
+        {
+            weapon.StartBomb();
         }
     }
 

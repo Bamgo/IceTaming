@@ -6,6 +6,8 @@ public class Meteor : MonoBehaviour
 {
     [SerializeField]
     private int damage = 25;  // 적 공격력
+    [SerializeField]
+    private GameObject explosionPrefab;  // 폭발 효과
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,5 +15,11 @@ public class Meteor : MonoBehaviour
         {
             collision.GetComponent<PlayerHP>().TakeDamage(damage);  // 공격력 만큼 체력 감소
         }
+    }
+
+    public void OnDie()
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);  // 폭발 이펙트 생성
+        Destroy(gameObject);  // 운석 사망
     }
 }
