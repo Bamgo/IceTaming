@@ -40,4 +40,10 @@ public class Twinkle : MonoBehaviour
             yield return null;
         }
     }
+
+    public void SpawnBossTwinkle()  // 보스가 스폰되면 적 생성 중지
+    {
+        FadeEffect(1, 0);
+        StopCoroutine("FadeEffect");
+    }
 }

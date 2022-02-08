@@ -39,4 +39,9 @@ public class MeteorEnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnTime);  // 해당 시간만큼 대기 후, 다음 로직 실행
         }
     }
+
+    public void SpawnBoss()  // 보스가 스폰되면 적 생성 중지
+    {
+        StopCoroutine("SpawnMeteor");
+    }
 }

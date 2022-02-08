@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - UndyingEnemy
   - PlayerShoot
+  - Alert
+  - Item
   layers:
   - Default
   - TransparentFX
