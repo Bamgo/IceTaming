@@ -81,9 +81,11 @@ public class EnemySpawner : MonoBehaviour  // 연속해서 위에서 적이 스폰되어 내려
 
         textBossWarning.SetActive(false);  // 텍스트 비활성화
         boss.SetActive(true);  // 보스 오브젝트 활성화
+
+        boss.GetComponent<Boss>().ChangeState(BossState.MoveToAppearPoint);  // 보스의 첫 번째 상태인 '지정된 위치로 이동' 실행
     }
 
-    public void DestroyClone(string str)  // 태그를 이용한 Clone 오브젝트 삭제
+    public static void DestroyClone(string str)  // 태그를 이용한 Clone 오브젝트 삭제
     {
         GameObject[] clone = GameObject.FindGameObjectsWithTag(str);
 

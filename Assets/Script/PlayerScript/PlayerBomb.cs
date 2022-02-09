@@ -50,7 +50,8 @@ public class PlayerBomb : MonoBehaviour
     {
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");  // 현재 게임에서 Enemy 태그를 가진 모든 오브젝트 정보를 가져온다.
         GameObject[] undyingEnemy = GameObject.FindGameObjectsWithTag("UndyingEnemy");  // 현재 게임에서 UndyingEnemy 태그를 가진 모든 오브젝트 정보를 가져온다.
-        
+        GameObject[] EnemyShot = GameObject.FindGameObjectsWithTag("EnemyShot");
+
         for (int i = 0; i < enemys.Length; ++i)  // 모든 적 파괴
         {
             enemys[i].GetComponent<Enemy>().OnDie();
@@ -60,6 +61,9 @@ public class PlayerBomb : MonoBehaviour
         {
             undyingEnemy[i].GetComponent<Meteor>().OnDie();
         }
+
+        EnemySpawner.DestroyClone("EnemyShot");
+
 
         Destroy(gameObject);  // Bomb 오브젝트 삭제
     }

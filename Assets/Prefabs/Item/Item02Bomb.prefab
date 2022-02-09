@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4961718927744073214}
   - component: {fileID: 5402779793545147480}
   - component: {fileID: -2382041520898493508}
+  - component: {fileID: -8477605210510088432}
   m_Layer: 0
   m_Name: Item02Bomb
   m_TagString: Item
@@ -139,3 +140,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+--- !u!114 &-8477605210510088432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281969633431037409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b4888c2af06ce499997f79ddcf0972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageData: {fileID: 11400000, guid: 9563b0b1af70d8b488bacd2d285837d1, type: 2}

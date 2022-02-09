@@ -9,6 +9,7 @@ TagManager:
   - PlayerShoot
   - Alert
   - Item
+  - EnemyShot
   layers:
   - Default
   - TransparentFX

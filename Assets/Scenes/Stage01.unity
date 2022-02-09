@@ -1095,6 +1095,8 @@ GameObject:
   - component: {fileID: 841006812}
   - component: {fileID: 841006811}
   - component: {fileID: 841006810}
+  - component: {fileID: 841006814}
+  - component: {fileID: 841006815}
   m_Layer: 0
   m_Name: Boss01IceLizard
   m_TagString: Untagged
@@ -1331,6 +1333,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841006814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841006809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526e7271eb8d32544be65169ba790804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossAppearPoint: 5
+--- !u!114 &841006815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841006809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3182adc9d424049b11dc0bd6816055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2670239916865427369, guid: 965fff8bf858b3b4fa169b6a44c30c9a, type: 3}
 --- !u!1 &909286139
 GameObject:
   m_ObjectHideFlags: 0
