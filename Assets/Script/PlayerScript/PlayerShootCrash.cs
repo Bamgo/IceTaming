@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShootCrash : MonoBehaviour
+public class PlayerShootCrash : MonoBehaviour  // 플레이어 샷이 적과 부딪혔을 때
 {
     [SerializeField]
     private int damage = 1;
@@ -17,6 +17,11 @@ public class PlayerShootCrash : MonoBehaviour
         }
         else if (collision.CompareTag("UndyingEnemy"))  // 샷과 부딪힌 오브젝트의 태그가 "UndyingEnemy"이면
         {
+            Destroy(gameObject);  // 샷 삭제
+        }
+        else if(collision.CompareTag("Boss"))  // 태그가 "Boss"이면
+        {
+            collision.GetComponent<BossHP>().TakeDamage(damage);  // 오브젝트(보스) 체력 감소
             Destroy(gameObject);  // 샷 삭제
         }
     }

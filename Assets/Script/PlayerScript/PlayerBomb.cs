@@ -8,6 +8,8 @@ public class PlayerBomb : MonoBehaviour
     private AnimationCurve curve;
     [SerializeField]
     private AudioClip bombAudio;  // 사운드
+    [SerializeField]
+    private int damage = 100;  // 폭탄 데미지
 
     private float bombDelay = 0.5f;  // 폭탄 이동 시간 (0.5초 뒤 폭발)
 
@@ -50,7 +52,8 @@ public class PlayerBomb : MonoBehaviour
     {
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");  // 현재 게임에서 Enemy 태그를 가진 모든 오브젝트 정보를 가져온다.
         GameObject[] undyingEnemy = GameObject.FindGameObjectsWithTag("UndyingEnemy");  // 현재 게임에서 UndyingEnemy 태그를 가진 모든 오브젝트 정보를 가져온다.
-        GameObject[] EnemyShot = GameObject.FindGameObjectsWithTag("EnemyShot");
+        GameObject[] enemyShot = GameObject.FindGameObjectsWithTag("EnemyShot");  // 적 샷 태그 전부 찾기
+        GameObject boss = GameObject.FindGameObjectWithTag("Boss");  // 보스 태그 전부 찾기
 
         for (int i = 0; i < enemys.Length; ++i)  // 모든 적 파괴
         {
@@ -63,6 +66,11 @@ public class PlayerBomb : MonoBehaviour
         }
 
         EnemySpawner.DestroyClone("EnemyShot");
+
+        if( boss != null)
+        {
+            boss.GetComponent<BossHP>().TakeDamage(damage);  // 보스의 체력을 damage 만큼 감소
+        }
 
 
         Destroy(gameObject);  // Bomb 오브젝트 삭제

@@ -26,11 +26,14 @@ public class EnemySpawner : MonoBehaviour  // 연속해서 위에서 적이 스폰되어 내려
     private Twinkle twinkle;  // 운석 경고선 제어(프리팹)
     [SerializeField]
     private GameObject boss;  // 보스 오브젝트
+    [SerializeField]
+    private GameObject panelBossHP;  // 보스 체력 패널 오브젝트
 
     private void Awake()
     {
         textBossWarning.SetActive(false);  // 보스 등장 텍스트 비활성화
         boss.SetActive(false);  // 보스 오브젝트 비활성화
+        panelBossHP.SetActive(false);  // 보스 오브젝트 비활성화
 
         StartCoroutine("SpawnEnemy");
     }
@@ -81,6 +84,7 @@ public class EnemySpawner : MonoBehaviour  // 연속해서 위에서 적이 스폰되어 내려
 
         textBossWarning.SetActive(false);  // 텍스트 비활성화
         boss.SetActive(true);  // 보스 오브젝트 활성화
+        panelBossHP.SetActive(true);  // 보스 오브젝트 활성화
 
         boss.GetComponent<Boss>().ChangeState(BossState.MoveToAppearPoint);  // 보스의 첫 번째 상태인 '지정된 위치로 이동' 실행
     }
