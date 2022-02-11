@@ -1422,6 +1422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526e7271eb8d32544be65169ba790804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageData: {fileID: 11400000, guid: b9706775e2253e04d818deaa4bcb037a, type: 2}
+  explosionPrefab: {fileID: 2201508036470389121, guid: 500e8b3d4d9b3fe4aa0e51f3e5b73c69, type: 3}
+  playerController: {fileID: 445628901}
+  nextSceneName: GameClear
   bossAppearPoint: 5
 --- !u!114 &841006815
 MonoBehaviour:
@@ -1435,7 +1439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3182adc9d424049b11dc0bd6816055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2670239916865427369, guid: 965fff8bf858b3b4fa169b6a44c30c9a, type: 3}
+  projectilePrefab01: {fileID: 2670239916865427369, guid: 965fff8bf858b3b4fa169b6a44c30c9a, type: 3}
+  projectilePrefab02: {fileID: 1993981268211441593, guid: 0e4c5bdefcfef2a438da7672905534de, type: 3}
 --- !u!114 &841006816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,7 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f3198d40d78b048832a022370b4593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
+  maxHP: 100
 --- !u!1 &863288711
 GameObject:
   m_ObjectHideFlags: 0
