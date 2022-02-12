@@ -11,9 +11,15 @@ public class ParticleAutoDestroyer : MonoBehaviour
         particle = GetComponent<ParticleSystem>();
     }
 
+    private void Start()
+    {
+        GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "effect";
+        GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = 2;
+    }
+
     private void Update()
     {
-        if(particle.isPlaying == false)  // 파티클이 재생 중이 아니라면 삭제
+        if(particle.isPlaying == false)
         {
             Destroy(gameObject);
         }
